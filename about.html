@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="icon" href="assets/icons/favicon.ico" type="image/x-icon">
+    <title>About Me</title>
+</head>
+<body id="page-about">
+    <div class="wrapper">
+        <header>
+            <h1>About Me</h1>
+                <ul>
+                    <li><a href="index.html" title="Go to homepage">Home</a></li>
+                    <li><a href="about.html" title="Learn about me">About</a></li>
+                    <li><a href="mailto:kirakosyandavid14028@gmail.com" title="Send me an email">Contact</a></li>
+                </ul>
+        </header>
+        <div class="about-content">
+            <div class="about-text">
+                <p>I’m David Kirakosian, a curious and motivated developer starting my journey in IT. I enjoy turning ideas into working applications and creating practical, well-designed software.</p>
+                <p>I have experience with C, C++, Python, and its frameworks, and I’ve worked with HTML, CSS, and some JavaScript to build web projects. I love exploring new technologies, tackling challenges, and finding creative ways to solve problems.</p>
+                <p>My focus is on growing my skills, taking on challenges, and steadily moving toward becoming a well-rounded developer.</p>
+            </div>
+            <div class="about-image">
+                <img src="https://www.gravatar.com/avatar/5f27bdb71e30373e70bd7c8632d2cfdb.jpg?s=256" alt="myAvatar">
+            </div>
+        </div>
+        <footer>
+            <p>© <span id="year"></span> David Kirakosian</p>
+        </footer>
+        <script>
+            document.getElementById("year").textContent = new Date().getFullYear();
+        </script>
+    </div>
+</body>
+</html>
