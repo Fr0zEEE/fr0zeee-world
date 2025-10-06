@@ -10,6 +10,7 @@ body
     background: linear-gradient(225deg, #c0a54d, #422782);
     background-size: 1000% 1000%;
     animation: gradientMove 20s ease-in-out infinite;
+    overflow-x: clip;
 }
 
 .wrapper
@@ -253,3 +254,4 @@ to
     opacity: 1;
 }
 }
+
