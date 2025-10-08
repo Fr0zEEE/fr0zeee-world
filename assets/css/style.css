@@ -7,9 +7,7 @@ body
     display: flex;
     min-height: 100vh;
     font-family: Roboto, sans-serif;
-    background: linear-gradient(225deg, #c0a54d, #422782);
-    background-size: 1000% 1000%;
-    animation: gradientMove 20s ease-in-out infinite;
+    background-color: #f2e9e4;
     overflow-x: clip;
 }
 
@@ -27,7 +25,6 @@ header
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 1rem 0 2rem 0;
     flex-direction: column;
     background-color: rgba(0, 0, 0, 0.5);
     min-width: 100vw;
@@ -42,7 +39,6 @@ main
     justify-content: center; 
     align-items: center;
     padding: 1rem;
-    gap: 1rem;
 }
 
 ul
@@ -57,7 +53,8 @@ ul
     flex-wrap: wrap;
 }
 
-@media (max-width: 350px) {
+@media (max-width: 350px) 
+{
     ul {
         gap: 2.5rem; 
     }
@@ -87,8 +84,8 @@ li a:hover
 
 #avatar
 {
-    height: 16.5rem;
-    width: 16.5rem;
+    height: 16rem;
+    width: 16rem;
     border-radius: 50%;
     border: 3px solid rgb(255, 255, 255, 0.5);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
@@ -96,24 +93,30 @@ li a:hover
     transition: 0.3s;
 }
 
-#avatar:hover {
-    height: 18rem;
-    width: 18rem;
+#avatar:hover 
+{
+    height: 17rem;
+    width: 17rem;
     border-color: rgb(0, 0, 0, 0.5);
 }
 
-#username
+#username 
 {
     font-size: 2rem;
     font-weight: bold;
     color: white; 
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    text-shadow:
+        -1.5px -1.5px 0 #000,
+        1.5px -1.5px 0 #000,
+        -1.5px  1.5px 0 #000,
+        1.5px  1.5px 0 #000,
+        0 0 4px rgba(0,0,0,0.5);
 }
 
 header h1 
 {
     color: rgb(255, 255, 255);
-    font-size: clamp(2em, 6vw, 5em);
+    font-size: clamp(2em, 6vw, 3em);
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
     margin: 0.5rem 0;
 }
@@ -134,7 +137,6 @@ header p
     flex-direction: row;
     flex-wrap: wrap;
     gap: 1rem;
-    margin-bottom: 2rem;
 }
 
 a
@@ -145,22 +147,10 @@ a
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-#github:hover
-{
-    background: rgba(133, 39, 136, 0.6); 
-}
-#youtube:hover
-{
-    background: rgba(129, 5, 5, 0.6);
-}
-#telegram:hover
-{ 
-    background: rgba(58, 118, 145, .6);
-}
-#spotistats:hover
-{
-    background: rgba(2, 124, 18, 0.6)
-}
+#github:hover{background: rgba(133, 39, 136, 1);}
+#youtube:hover{background: rgba(129, 5, 5, 1);}
+#telegram:hover{background: rgb(32, 143, 194, 1);}
+#spotistats:hover{background: rgba(2, 124, 18, 1)}
 
 footer 
 {
@@ -169,8 +159,6 @@ footer
     color: rgb(255, 255, 255);
     background-color: rgba(0, 0, 0, 0.5);
     box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.3);
-    padding: 1.5rem 0;
-    margin-top: 2rem;
     width: 100%;
     z-index: 100;
 }
@@ -204,20 +192,6 @@ footer
     border-radius: 1rem;
 }
 
-@media (max-width: 600px) {
-    #page-about .about-content {
-        flex-direction: column;
-    }
-    #page-about .about-image {
-        flex: none;
-        display: flex;
-        justify-content: center;
-    }
-    #page-about .about-image img {
-        max-width: 100%;
-    }
-}
-
 #page-about .about-text p
 {
     display: flex;
@@ -241,10 +215,73 @@ footer
     border-radius: 10px;
 }
 
-@keyframes gradientMove {
-    0% {background-position: 0 100%}
-    50% {background-position: 100% 0%}
-    100% {background-position: 0 100%}
+svg 
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+}
+
+@media (max-width: 600px) 
+{
+    #page-about .about-content {
+        flex-direction: column;
+    }
+    #page-about .about-image {
+        flex: none;
+        display: flex;
+        justify-content: center;
+    }
+    #page-about .about-image img {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 600px) 
+{
+    #avatar {
+        width: 12rem;
+        height: 12rem;
+    }
+    #avatar:hover {
+        width: 13rem;
+        height: 13rem;
+    }
+    .icon {
+        width: 2rem;
+        height: 2rem;
+    }
+    #username {
+        font-size: 1.5rem;
+    }
+}
+
+@keyframes rotate 
+{
+    0% {
+    transform: rotate(0deg);
+    }
+    100% {
+    transform: rotate(360deg);
+    }
+    }
+    .out-top {
+        animation: rotate 20s linear infinite;
+        transform-origin: 13px 25px;
+    }
+    .in-top {
+        animation: rotate 10s linear infinite;
+        transform-origin: 13px 25px;
+    }
+    .out-bottom {
+        animation: rotate 25s linear infinite;
+        transform-origin: 84px 93px;
+    }
+    .in-bottom {
+        animation: rotate 15s linear infinite;
+        transform-origin: 84px 93px;
 }
 
 @keyframes fadeIn 
