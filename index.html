@@ -3,45 +3,146 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Personal site with profile info and social links">
+    <meta name="description" content="Personal webpage - portfolio, projects, and social links.">
+    <script>
+        (function() {
+            const savedTheme = localStorage.getItem("theme");
+            if (savedTheme === "dark") {
+                document.documentElement.classList.add("dark");
+            }
+        })();
+    </script>
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="icon" href="assets/icons/favicon.ico" type="image/x-icon">
     <title>Fr0zEEE World</title>
 </head>
 <body>
-    <svg preserveAspectRatio="xMidYMid slice" viewBox="10 10 80 80">
-        <path fill="#4a4e69" class="out-top" d="M37-5C25.1-14.7,5.7-19.1-9.2-10-28.5,1.8-32.7,31.1-19.8,49c15.5,21.5,52.6,22,67.2,2.3C59.4,35,53.7,8.5,37-5Z"/>
-        <path fill="#9a8c98" class="in-top" d="M20.6,4.1C11.6,1.5-1.9,2.5-8,11.2-16.3,23.1-8.2,45.6,7.4,50S42.1,38.9,41,24.5C40.2,14.1,29.4,6.6,20.6,4.1Z"/>
-        <path fill="#c9ada7" class="out-bottom" d="M105.9,48.6c-12.4-8.2-29.3-4.8-39.4.8-23.4,12.8-37.7,51.9-19.1,74.1s63.9,15.3,76-5.6c7.6-13.3,1.8-31.1-2.3-43.8C117.6,63.3,114.7,54.3,105.9,48.6Z"/>
-        <path fill="#00f5d4" class="in-bottom" d="M102,67.1c-9.6-6.1-22-3.1-29.5,2-15.4,10.7-19.6,37.5-7.6,47.8s35.9,3.9,44.5-12.5C115.5,92.6,113.9,74.6,102,67.1Z"/>
-    </svg>
+    <div class="background">
+        <svg preserveAspectRatio="xMidYMid slice" viewBox="10 10 80 80">
+            <path class="out-top" d="M37-5C25.1-14.7,5.7-19.1-9.2-10-28.5,1.8-32.7,31.1-19.8,49c15.5,21.5,52.6,22,67.2,2.3C59.4,35,53.7,8.5,37-5Z"/>
+            <path class="in-top" d="M20.6,4.1C11.6,1.5-1.9,2.5-8,11.2-16.3,23.1-8.2,45.6,7.4,50S42.1,38.9,41,24.5C40.2,14.1,29.4,6.6,20.6,4.1Z"/>
+            <path class="out-bottom" d="M105.9,48.6c-12.4-8.2-29.3-4.8-39.4.8-23.4,12.8-37.7,51.9-19.1,74.1s63.9,15.3,76-5.6c7.6-13.3,1.8-31.1-2.3-43.8C117.6,63.3,114.7,54.3,105.9,48.6Z"/>
+            <path class="in-bottom" d="M102,67.1c-9.6-6.1-22-3.1-29.5,2-15.4,10.7-19.6,37.5-7.6,47.8s35.9,3.9,44.5-12.5C115.5,92.6,113.9,74.6,102,67.1Z"/>
+        </svg>
+    </div>
     <div class="wrapper">
         <header>
-            <h1>Welcome</h1>
-            <ul>
-                <li><a href="index.html" title="Go to homepage">Home</a></li>
-                <li><a href="about.html" title="Learn about me">About</a></li>
-                <li><a href="mailto:kirakosyandavid14028@gmail.com" title="Send me an email">Contact</a></li>
-            </ul>
+            <h1>Fr0zEEE</h1>
+        <nav>
+            <button id="nav-toggle">☰</button>
+            <!-- Mobile Overlay -->
+            <div id="nav-overlay">
+                <a href="#home" class="overlay-link">Home</a>
+                <a href="#about" class="overlay-link">About</a>
+                <a href="mailto:kirakosyandavid14028@gmail.com" class="overlay-link">Contact</a>
+                <button id="theme-toggle" class="mobile-theme">🌙</button>
+                <button id="nav-close">✕</button>
+            </div>
+            <!-- Desktop Overlay -->
+            <div id="nav-desktop">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="mailto:kirakosyandavid14028@gmail.com">Contact</a>
+                <button id="theme-toggle-desktop">🌙</button>
+            </div>
+        </nav>
         </header>
-        <main>
+        <section id="home">
             <div class="profile-info">
                 <div id="avatar-frame"><img id="avatar" src="https://www.gravatar.com/avatar/5f27bdb71e30373e70bd7c8632d2cfdb.jpg?s=512" alt="Avatar"></div>
-                <span id="username">Fr0zEEE</span>
+                <span id="username">David Kirakosian</span>
+                <span id="low-username">Student, Developer</span>
+                <div class="link-container">
+                    <a id="youtube" target="_blank" href="https://www.youtube.com/@fr0zeee8/featured" class="icon">
+                        <svg class="icon" class="icon" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><title xmlns="">Youtube</title><g fill-rule="evenodd" clip-rule="evenodd">
+                            <path fill="currentColor" d="M10.386 8.357A.75.75 0 0 0 9.25 9v6a.75.75 0 0 0 1.136.643l5-3a.75.75 0 0 0 0-1.286zM13.542 12l-2.792 1.675v-3.35z"/><path fill="currentColor" d="M17.03 4.641a64.5 64.5 0 0 0-10.06 0l-2.241.176a2.975 2.975 0 0 0-2.703 2.475a28.6 28.6 0 0 0 0 9.416a2.975 2.975 0 0 0 2.703 2.475l2.24.176c3.349.262 6.713.262 10.062 0l2.24-.176a2.975 2.975 0 0 0 2.703-2.475c.52-3.117.52-6.299 0-9.416a2.975 2.975 0 0 0-2.703-2.475zM7.087 6.137a63 63 0 0 1 9.828 0l2.24.175c.676.053 1.229.56 1.34 1.228a27 27 0 0 1 0 8.92a1.475 1.475 0 0 1-1.34 1.228l-2.24.175a63 63 0 0 1-9.828 0l-2.24-.175a1.475 1.475 0 0 1-1.34-1.228a27 27 0 0 1 0-8.92a1.475 1.475 0 0 1 1.34-1.228z"/></g>
+                        </svg>
+                    </a>
+                    
+                    <a id="github" target="_blank" href="https://github.com/Fr0zEEE" class="icon">
+                        <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 15 15"><title xmlns="">Github</title>
+                            <path fill="currentColor" d="M5.65 12.477a.5.5 0 1 0-.3-.954zm-3.648-2.96l-.484-.128l-.254.968l.484.127zM9 14.5v.5h1v-.5zm.063-4.812l-.054-.498a.5.5 0 0 0-.299.852zM12.5 5.912h.5v-.001zm-.833-2.006l-.466-.18a.5.5 0 0 0 .112.533zm-.05-2.017l.456-.204a.5.5 0 0 0-.319-.276zm-2.173.792l-.126.484a.5.5 0 0 0 .398-.064zm-3.888 0l-.272.42a.5.5 0 0 0 .398.064zM3.383 1.89l-.137-.48a.5.5 0 0 0-.32.276zm-.05 2.017l.354.353a.5.5 0 0 0 .112-.534zM2.5 5.93H3v-.002zm3.438 3.758l.352.355a.5.5 0 0 0-.293-.851zM5.5 11H6l-.001-.037zM5 14.5v.5h1v-.5zm.35-2.977c-.603.19-.986.169-1.24.085c-.251-.083-.444-.25-.629-.49a5 5 0 0 1-.27-.402c-.085-.139-.182-.302-.28-.447c-.191-.281-.473-.633-.929-.753l-.254.968c.08.02.184.095.355.346c.082.122.16.252.258.412c.094.152.202.32.327.484c.253.33.598.663 1.11.832c.51.168 1.116.15 1.852-.081zm4.65-.585c0-.318-.014-.608-.104-.878c-.096-.288-.262-.51-.481-.727l-.705.71c.155.153.208.245.237.333c.035.105.053.254.053.562zm-.884-.753c.903-.097 1.888-.325 2.647-.982c.78-.675 1.237-1.729 1.237-3.29h-1c0 1.359-.39 2.1-.892 2.534c-.524.454-1.258.653-2.099.743zM13 5.91a3.35 3.35 0 0 0-.98-2.358l-.707.706c.438.44.685 1.034.687 1.655zm-.867-1.824c.15-.384.22-.794.21-1.207l-1 .025a2.1 2.1 0 0 1-.142.82zm.21-1.207a3.1 3.1 0 0 0-.27-1.195l-.913.408c.115.256.177.532.184.812zm-.726-.99c.137-.481.137-.482.136-.482h-.003l-.004-.002l-.03-.007l-.054-.01a1 1 0 0 0-.158-.013a2.2 2.2 0 0 0-.51.053c-.425.091-1.024.317-1.82.832l.542.84c.719-.464 1.206-.634 1.488-.694a1.2 1.2 0 0 1 .273-.032l.033.002l-.008-.001l-.01-.002l-.006-.002h-.003l-.002-.001c-.001 0-.002 0 .136-.482m-2.047.307a8.2 8.2 0 0 0-4.14 0l.252.968a7.2 7.2 0 0 1 3.636 0zm-3.743.064C5.03 1.746 4.43 1.52 4.005 1.43a2.2 2.2 0 0 0-.51-.053a1.3 1.3 0 0 0-.241.03l-.004.002h-.003l.136.481l.137.481h-.001l-.002.001l-.003.001l-.016.004l-.008.001h.008l.025-.002a1.2 1.2 0 0 1 .273.032c.282.06.769.23 1.488.694zm-2.9-.576a3.1 3.1 0 0 0-.27 1.195l1 .025a2.1 2.1 0 0 1 .183-.812zm-.27 1.195c-.01.413.06.823.21 1.207l.932-.362a2.1 2.1 0 0 1-.143-.82zm.322.673a3.4 3.4 0 0 0-.726 1.091l.924.38c.118-.285.292-.545.51-.765zm-.726 1.091A3.4 3.4 0 0 0 2 5.93l1-.003c0-.31.06-.616.177-.902zM2 5.93c0 1.553.458 2.597 1.239 3.268c.757.65 1.74.88 2.64.987l.118-.993C5.15 9.09 4.416 8.89 3.89 8.438C3.388 8.007 3 7.276 3 5.928zm3.585 3.404c-.5.498-.629 1.09-.584 1.704L6 10.963c-.03-.408.052-.683.291-.921zM5 11v3.5h1V11zm5 3.5V13H9v1.5zm0-1.5v-2.062H9V13z"/>
+                        </svg>
+                    </a>
+                    
+                    <a id="telegram" target="_blank" href="https://t.me/Fr0zEEE" class="icon">
+                        <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><title xmlns="">Telegram</title>
+                            <path fill="currentColor" fill-rule="evenodd" d="M5.788 14.02a1 1 0 0 0 .132.031a456 456 0 0 1 .844 2.002c.503 1.202 1.01 2.44 1.121 2.796c.139.438.285.736.445.94c.083.104.178.196.29.266a1 1 0 0 0 .186.088c.32.12.612.07.795.009a1.3 1.3 0 0 0 .304-.15L9.91 20l2.826-1.762l3.265 2.502q.072.055.156.093c.392.17.772.23 1.13.182c.356-.05.639-.199.85-.368a2 2 0 0 0 .564-.728l.009-.022l.003-.008l.002-.004v-.002l.001-.001a1 1 0 0 0 .04-.133l2.98-15.025a1 1 0 0 0 .014-.146c0-.44-.166-.859-.555-1.112c-.334-.217-.705-.227-.94-.209c-.252.02-.486.082-.643.132a4 4 0 0 0-.26.094l-.011.005l-16.714 6.556l-.002.001a2 2 0 0 0-.167.069a2.5 2.5 0 0 0-.38.212c-.227.155-.75.581-.661 1.285c.07.56.454.905.689 1.071c.128.091.25.156.34.199c.04.02.126.054.163.07l.01.003zm14.138-9.152h-.002l-.026.011l-16.734 6.565l-.026.01l-.01.003a1 1 0 0 0-.09.04a1 1 0 0 0 .086.043l3.142 1.058a1 1 0 0 1 .16.076l10.377-6.075l.01-.005a2 2 0 0 1 .124-.068c.072-.037.187-.091.317-.131c.09-.028.357-.107.645-.014a.85.85 0 0 1 .588.689a.84.84 0 0 1 .003.424c-.07.275-.262.489-.437.653c-.15.14-2.096 2.016-4.015 3.868l-2.613 2.52l-.465.45l5.872 4.502a.54.54 0 0 0 .251.04a.23.23 0 0 0 .117-.052a.5.5 0 0 0 .103-.12l.002-.001l2.89-14.573a2 2 0 0 0-.267.086zm-8.461 12.394l-1.172-.898l-.284 1.805zm-2.247-2.68l1.165-1.125l2.613-2.522l.973-.938l-6.52 3.817l.035.082a339 339 0 0 1 1.22 2.92l.283-1.8a.75.75 0 0 1 .231-.435" clip-rule="evenodd"/>
+                        </svg>
+                    </a>
+                    
+                    <a id="spotistats" target="_blank" href="https://stats.fm/fr0zeee" class="icon">
+                        <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48"><title xmlns="">Spotistats</title>
+                            <rect width="7.68" height="34.586" x="20.16" y="6.707" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" rx="2.327" stroke-width="3"/><rect width="7.68" height="15.244" x="33.821" y="26.049" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" rx="2.327" stroke-width="3"/><rect width="7.68" height="24.721" x="6.5" y="16.572" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" rx="2.327" stroke-width="3"/>
+                        </svg>
+                    </a>
+                    
+                    <a id="linkedin" target="_blank" href="https://www.linkedin.com/in/david-kirakosian-89826625b/" class="icon" title="Linkedin" alt="linkedin">
+                        <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><title xmlns="">Linkedin</title>
+                            <path fill="currentColor" fill-rule="evenodd" d="M5 1.25a2.75 2.75 0 1 0 0 5.5a2.75 2.75 0 0 0 0-5.5M3.75 4a1.25 1.25 0 1 1 2.5 0a1.25 1.25 0 0 1-2.5 0m-1.5 4A.75.75 0 0 1 3 7.25h4a.75.75 0 0 1 .75.75v13a.75.75 0 0 1-.75.75H3a.75.75 0 0 1-.75-.75zm1.5.75v11.5h2.5V8.75zM9.25 8a.75.75 0 0 1 .75-.75h4a.75.75 0 0 1 .75.75v.434l.435-.187a7.8 7.8 0 0 1 2.358-.595C20.318 7.4 22.75 9.58 22.75 12.38V21a.75.75 0 0 1-.75.75h-4a.75.75 0 0 1-.75-.75v-7a1.25 1.25 0 0 0-2.5 0v7a.75.75 0 0 1-.75.75h-4a.75.75 0 0 1-.75-.75zm1.5.75v11.5h2.5V14a2.75 2.75 0 1 1 5.5 0v6.25h2.5v-7.87c0-1.904-1.661-3.408-3.57-3.234a6.3 6.3 0 0 0-1.904.48l-1.48.635a.75.75 0 0 1-1.046-.69V8.75z" clip-rule="evenodd"/>
+                        </svg>
+                    </a>
+                    
+                    <a id="instagram" target="_blank" href="" class="icon" title="Instagram" alt="instagram">
+                        <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><title xmlns="">Instagram</title>
+                            <path fill="currentColor" d="M16 7a1 1 0 1 1 2 0a1 1 0 0 1-2 0"/><path fill="currentColor" fill-rule="evenodd" d="M12 7.25a4.75 4.75 0 1 0 0 9.5a4.75 4.75 0 0 0 0-9.5M8.75 12a3.25 3.25 0 1 1 6.5 0a3.25 3.25 0 0 1-6.5 0" clip-rule="evenodd"/><path fill="currentColor" fill-rule="evenodd" d="M17.258 2.833a47.7 47.7 0 0 0-10.516 0c-2.012.225-3.637 1.81-3.873 3.832a46 46 0 0 0 0 10.67c.236 2.022 1.86 3.607 3.873 3.832a47.8 47.8 0 0 0 10.516 0c2.012-.225 3.637-1.81 3.873-3.832a46 46 0 0 0 0-10.67c-.236-2.022-1.86-3.607-3.873-3.832m-10.35 1.49a46.2 46.2 0 0 1 10.184 0c1.33.15 2.395 1.199 2.55 2.517a44.4 44.4 0 0 1 0 10.32a2.89 2.89 0 0 1-2.55 2.516a46.2 46.2 0 0 1-10.184 0a2.89 2.89 0 0 1-2.55-2.516a44.4 44.4 0 0 1 0-10.32a2.89 2.89 0 0 1 2.55-2.516" clip-rule="evenodd"/>
+                        </svg>
+                    </a>
+                </div>
             </div>
-            <div class="link-container">
-                <a id="youtube" target="_blank" href="https://www.youtube.com/@fr0zeee8/featured"><img src="assets/icons/youtube.svg" class="icon" alt="youtube"></a>
-                <a id="github" target="_blank" href="https://github.com/Fr0zEEE"><img src="assets/icons/github.svg" class="icon" alt="github"></a>
-                <a id="telegram" target="_blank" href="https://t.me/Fr0zEEE"><img src="assets/icons/telegram.svg" class="icon" alt="telegram"></a>
-                <a id="spotistats" target="_blank" href="https://stats.fm/fr0zeee"><img src="assets/icons/spotify.svg" class="icon" alt="spotistats"></a>
+        </section>
+        <section id="about">
+        <div class="about-skills-container">
+            <!-- About Me -->
+            <div class="about-text">
+                <h2>About Me</h2>
+                <p>Hi! I’m David Kirakosian, an Apprentice Software Developer.</p>
+                <p>I enjoy learning programming through projects and experimenting with new tech. I also enjoy gaming, music, and exploring new ideas.</p>
+                <p>Take a look at my projects or say hi!</p>
             </div>
-        </main>
+            <!-- Skills -->
+            <div class="skills">
+                <h2>Skills</h2>
+                <ul>
+                    <li>C</li>
+                    <li>C++</li>
+                    <li>Python</li>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>JavaScript</li>
+                    <li>Adobe Photoshop</li>
+                    <li>Sony Vegas Video</li>
+                </ul>
+            </div>
+            <!-- Languages -->
+            <div class="languages">
+                <h2>Languages</h2>
+                <ul>
+                    <li>English – Full professional proficiency</li>
+                    <li>German – Full professional proficiency</li>
+                    <li>Russian – Native proficiency</li>
+                </ul>
+            </div>
+            <!-- Education -->
+            <div class="education">
+                <h2>Education</h2>
+                <p><strong>Johann-Friedrich-von-Cotta-Schule Stuttgart</strong><br>
+                Higher Education Entrance Qualification, Business Informatics<br>
+                2021–2023</p>
+                
+                <p><strong>Ferdinand-von-Steinbeis-Schule Reutlingen</strong><br>
+                Training as an IT specialist in application development<br>
+                2023–2026</p>
+            </div>
+        </div>
+        </section>
         <footer>
-            <p>© <span id="year"></span> David Kirakosian</p>
+            © 2025–<span id="year"></span> David Kirakosian
         </footer>
         <script>
             document.getElementById("year").textContent = new Date().getFullYear();
         </script>
+        <script src="script.js"></script>
     </div>
 </body>
 
