@@ -55,12 +55,12 @@ html.dark body {
 
 section {
     min-height: 100vh;
+    padding: 5.2rem 2rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 4rem 2rem;
-    box-sizing: border-box;
     text-align: center;
+    box-sizing: content-box;
 }
 
 .wrapper {
@@ -82,6 +82,7 @@ header {
     align-items: center;
     padding: 1rem 2rem;
     box-sizing: border-box;
+    z-index: 100;
 }
 
 header h1 {
@@ -117,29 +118,34 @@ main {
     transition: 0.3s;
 }
 
-.profile img {
-    width: 200px;
-    border-radius: 50%;
-}
-
-.about-container {
-    border-radius: 1rem;
-    padding: 1rem;
-    background-color: rgb(0, 0, 0, 0.5);
-    color: white;
-    max-width: 800px;
-}
-
 .about-skills-container {
     display: flex;
-    gap: 3rem;
+    flex-direction: column;
+    gap: 1rem;
     margin-top: 2rem;
     flex-wrap: wrap;
     border-radius: 1rem;
-    padding: 1rem;
-    background-color: rgb(0, 0, 0, 0.5);
+    padding: 2rem 0;
     color: white;
     max-width: 800px;
+}
+
+.card {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.card.skills {
+    padding: 1rem;
+    overflow: hidden;
 }
 
 .about-text, .skills {
@@ -147,21 +153,48 @@ main {
     min-width: 250px;
 }
 
-.skills ul {
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+/*
+.about-text, .skills li {
+    flex: 1;
+    min-width: 150px;
+}
+*/
+
+/*
+.skills-grid .category h3 {
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+*/
+
+.skills-grid .category ul {
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
     list-style: none;
     padding: 0;
-    margin-top: 1rem;
+    justify-content: center;
 }
 
-.skills ul li {
+.skills-grid .category ul li {
     background-color: #3a86ff;
     color: white;
     padding: 0.4rem 0.8rem;
     border-radius: 5px;
     font-size: 0.95rem;
+    margin: 0;
+}
+
+@media (max-width: 420px) {
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 .languages ul {
