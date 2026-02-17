@@ -54,8 +54,8 @@ html.dark body {
 }
 
 section {
-    min-height: 100vh;
-    padding: 5.2rem 2rem;
+    min-height: calc(100vh - 83px);
+    padding: 4rem 2rem;
     display: flex;
     justify-content: center;
     align-items: center;
