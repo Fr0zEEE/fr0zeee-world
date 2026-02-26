@@ -52,6 +52,25 @@
                 <div id="avatar-frame"><img id="avatar" src="https://www.gravatar.com/avatar/5f27bdb71e30373e70bd7c8632d2cfdb.jpg?s=512" alt="Avatar"></div>
                 <span id="username">David Kirakosian</span>
                 <span id="low-username">Student, Developer</span>
+                <div id="spotify-marquee"><span>Currently listening: Nothing playing</span></div>
+                <script>
+                async function loadTrack() {
+                    try {
+                        const res = await fetch("https://spotify-api-integration-x2hw.onrender.com/current");
+                        const data = await res.json();
+                        const marquee = document.querySelector("#spotify-marquee span");
+                        if (data.title) {
+                            marquee.innerText = "Currently listening: " + `${data.title} - ${data.artists}`;
+                        } else {
+                            marquee.innerText = "Currently listening: Nothing playing";
+                        }
+                    } catch (err) {
+                        console.log(err);
+                    }
+                }
+                loadTrack();
+                setInterval(loadTrack, 10000);
+                </script>
                 <div class="link-container">
                     <a id="youtube" target="_blank" href="https://www.youtube.com/@fr0zeee8/featured" class="icon">
                         <svg class="icon" class="icon" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><title xmlns="">Youtube</title><g fill-rule="evenodd" clip-rule="evenodd">
